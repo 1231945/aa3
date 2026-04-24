@@ -2,7 +2,7 @@
   function setCookie(name, value, maxAge) {
       let cookieStr = name + "=" + value + ";";
       if (maxAge >-1) {
-         cookieStr += "max-age=" + maxAge + ";";
+         cookieStr += "max-age=" + maxAge + ";path=/;";
       }
       document.cookie = cookieStr;
   }
@@ -26,21 +26,21 @@ function getCookie(name) {
     document.getElementById("errorMsg").innerHTML = "";
 
     // TODO: Get values
-    let name = document.getElementById("name").value;
+    let name = document.getElementById("name").value.trim();
     let variant = document.getElementById("variant").value;
     let quantity = document.getElementById("quantity").value;
-    let address = document.getElementById("address").value;
+    let address = document.getElementById("address").value.trim();
     let terms = document.getElementById("terms").checked;
     let pickup = document.getElementById("pickup").value;
 
     // TODO: Validation
     function validateForm(){
       let flag= true;
-      if(name == "" || variant == "" || (address == "" && pickup == "Delivery") || terms == "" || pickup == ""){ 
+      if(name == "" || quantity == "" || variant == "" || (address == "" && pickup == "Delivery") || terms == false || pickup == ""){ 
         document.getElementById("errorMsg").innerHTML = "The following fields cannot be empty:";
         flag =false;
       }
-      if(name.trim() == ""){
+      if(name == ""){
         document.getElementById("errorMsg").innerHTML += " Name,";
           flag =false;
       }
@@ -48,8 +48,7 @@ function getCookie(name) {
         document.getElementById("errorMsg").innerHTML += " Variant,";
           flag =false;
       }
-      }
-      if(address.trim() == "" && pickup == "Delivery"){
+      if(address == "" && pickup == "Delivery"){
         document.getElementById("errorMsg").innerHTML += " Address,";
           flag =false;
       }
@@ -57,12 +56,12 @@ function getCookie(name) {
         document.getElementById("errorMsg").innerHTML += " Terms,";
          flag =false;
       }
-      if(pickup == null){
+      if(pickup == ""){
         document.getElementById("errorMsg").innerHTML += " Pickup,";
           flag =false;
       }
-      if(Number.isInteger(Number(quantity)) <= 0){
-        document.getElementById("errorMsg").innerHTML += " Quantity cannot be 0";
+      if(isNaN(quantity) || Number(quantity) <= 0){
+        document.getElementById("errorMsg").innerHTML += " Invalid Quantity";
          flag =false;
       }
       if(flag==false){
