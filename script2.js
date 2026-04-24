@@ -25,10 +25,10 @@ document.getElementById("Product").innerHTML = localStorage.getItem("product");
 document.getElementById("Quantity").innerHTML = localStorage.getItem("quantity");
 document.getElementById("Pickup").innerHTML = localStorage.getItem("pickup"); 
 
-if(product == "Antho-Presko variant1 :No Cover: 93.138 PHP"){
+if(product == "Antho-Presko variant 1 :No Cover: 93.138 PHP"){
   document.getElementById("price").innerHTML = localStorage.getItem("quantity") * 93.138;
 }
-else if(product == "Antho-Presko variant2 :With Cover: 143.138 PHP"){
+else if(product == "Antho-Presko variant 2 :With Cover: 143.138 PHP"){
   document.getElementById("price").innerHTML = localStorage.getItem("quantity") * 143.138;
 }
 if(localStorage.getItem("pickup") != "Delivery"){
