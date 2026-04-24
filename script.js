@@ -66,7 +66,7 @@ function getCookie(name) {
     // If invalid: Display appropriate error message
     // return false;
     // Otherwise: Store data (cookies + localStorage)
-    if (validateForm() == false){
+    if (name == "" || variant == "" || quantity == "" || (address == "" && pickup == "Delivery") || terms == "" || pickup == ""){
       return false;
     }
     else{
