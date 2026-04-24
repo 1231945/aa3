@@ -35,39 +35,51 @@ function getCookie(name) {
 
     // TODO: Validation
     function validateForm(){
-    
+      let flag= true;
       if(name == "" || variant == "" || (address == "" && pickup == "Delivery") || terms == "" || pickup == ""){ 
         document.getElementById("errorMsg").innerHTML = "The following fields cannot be empty:";
-        return false;
+        flag =false;
       }
       if(name == ""){
         document.getElementById("errorMsg").innerHTML += " Name,";
+          flag =false;
       }
       if(variant == ""){
         document.getElementById("errorMsg").innerHTML += " Variant,";
+          flag =false;
       }
       if(quantity == ""){
         document.getElementById("errorMsg").innerHTML += " Quantity,";
+         flag =false;
       }
       if(address == "" && pickup == "Delivery"){
         document.getElementById("errorMsg").innerHTML += " Address,";
+          flag =false;
       }
-      if(terms == ""){
+      if(terms == false){
         document.getElementById("errorMsg").innerHTML += " Terms,";
+         flag =false;
       }
       if(pickup == null){
         document.getElementById("errorMsg").innerHTML += " Pickup,";
+          flag =false;
       }
       if(quantity <= 0){
         document.getElementById("errorMsg").innerHTML += " Quantity cannot be 0";
+         flag =false;
       }
-      return true;
+      if(flag==false){
+        return false;
+      }
+      else{
+        return true;
+      }
   }
 
     // If invalid: Display appropriate error message
     // return false;
     // Otherwise: Store data (cookies + localStorage)
-    if (name == "" || variant == "" || quantity == "" || (address == "" && pickup == "Delivery") || terms == "" || pickup == ""){
+    if (validateForm() === false){
       return false;
     }
     else{
