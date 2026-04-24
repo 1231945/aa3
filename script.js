@@ -38,7 +38,6 @@ function getCookie(name) {
     
       if(name == "" || variant == "" || quantity == "" || (address == "" && pickup == "Delivery") || terms == "" || pickup == ""){ 
         document.getElementById("errorMsg").innerHTML = "The following fields cannot be empty:";
-        return false;
       }
       if(name == ""){
         document.getElementById("errorMsg").innerHTML += " Name";
