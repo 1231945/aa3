@@ -40,7 +40,7 @@ function getCookie(name) {
         document.getElementById("errorMsg").innerHTML = "The following fields cannot be empty:";
         flag =false;
       }
-      if(name == ""){
+      if(name.trim() == ""){
         document.getElementById("errorMsg").innerHTML += " Name,";
           flag =false;
       }
@@ -49,7 +49,7 @@ function getCookie(name) {
           flag =false;
       }
       }
-      if(address == "" && pickup == "Delivery"){
+      if(address.trim() == "" && pickup == "Delivery"){
         document.getElementById("errorMsg").innerHTML += " Address,";
           flag =false;
       }
