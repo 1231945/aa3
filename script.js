@@ -48,9 +48,6 @@ function getCookie(name) {
         document.getElementById("errorMsg").innerHTML += " Variant,";
           flag =false;
       }
-      if(quantity == ""){
-        document.getElementById("errorMsg").innerHTML += " Quantity,";
-         flag =false;
       }
       if(address == "" && pickup == "Delivery"){
         document.getElementById("errorMsg").innerHTML += " Address,";
