@@ -61,7 +61,7 @@ function getCookie(name) {
         document.getElementById("errorMsg").innerHTML += " Pickup,";
           flag =false;
       }
-      if(quantity <= 0){
+      if(Number.isInteger(Number(quantity)) <= 0){
         document.getElementById("errorMsg").innerHTML += " Quantity cannot be 0";
          flag =false;
       }
