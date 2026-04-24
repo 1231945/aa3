@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pre-Order Form</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      width: 500px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 50px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input, select {
+      width: 95%;
+      padding: 8px;
+      margin: 8px 0;
+    }
+
+    #terms {
+      width: 10%;
+    }
+
+    button {
+      padding: 10px;
+      width: 100%;
+      margin-top: 5px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .error {
+      color: red;
+      margin-bottom: 10px;
+      min-height: 18px;
+    }
+  </style>
+
+
+<body>
+
+<div class="container">
+  <h2>Science Project Pre-Order</h2>
+  <p>Antho-Presko is a packaging strip that is made from mangosteen pericarp to detect spilage of high-protein foods such as meat and fish. </p>
+
+  <!-- Error Message Area -->
+  <div id="errorMsg" class="error"></div>
+
+  <form onsubmit="return handleOrder()">
+    
+    <label>Name:</label>
+    <input type="text" id="name">
+
+    <label>Product:</label>
+    <select id="variant">
+      <option value="">Select</option>
+      <option value="Antho-Presko variant1 :No Cover: 93.138 PHP">Antho-Presko variant1 :No Cover: 93.138 PHP</option>
+      <option value="Antho-Presko variant2 :With Cover: 143.138 PHP">Antho-Presko variant2 :With Cover: 143.138 PHP</option>
+    </select>
+
+    <label>Quantity:</label>
+    <input type="number" id="quantity">
+
+    <label>Pickup Method:</label>
+    <select id="pickup">
+      <option value="">Select</option>
+      <option value="Delivery">Delivery</option>
+      <option value="Meetup">Meetup</option>
+    </select>
+
+    <label>Address (for delivery only):</label>
+    <input type="text" id="address">
+
+    <label>
+      <input type="checkbox" id="terms"> I accept terms
+    </label>
+    <br><br>
+
+    <button type="button" onclick="loadPreviousOrder()">Load Previous Order</button>
+    <button type="submit">Submit</button>
+    <script src="script.js"></script>
+
+  </form>
+</div>
