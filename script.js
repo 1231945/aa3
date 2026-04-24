@@ -36,26 +36,26 @@ function getCookie(name) {
     // TODO: Validation
     function validateForm(){
     
-      if(name == "" || variant == "" || quantity == "" || (address == "" && pickup == "Delivery") || terms == "" || pickup == ""){ 
+      if(name == "" || variant == "" || (address == "" && pickup == "Delivery") || terms == "" || pickup == ""){ 
         document.getElementById("errorMsg").innerHTML = "The following fields cannot be empty:";
       }
       if(name == ""){
-        document.getElementById("errorMsg").innerHTML += " Name";
+        document.getElementById("errorMsg").innerHTML += " Name,";
       }
       if(variant == ""){
-        document.getElementById("errorMsg").innerHTML += " Variant";
+        document.getElementById("errorMsg").innerHTML += " Variant,";
       }
       if(quantity == ""){
-        document.getElementById("errorMsg").innerHTML += " Quantity";
+        document.getElementById("errorMsg").innerHTML += " Quantity,";
       }
       if(address == "" && pickup == "Delivery"){
-        document.getElementById("errorMsg").innerHTML += " Address";
+        document.getElementById("errorMsg").innerHTML += " Address,";
       }
       if(terms == ""){
-        document.getElementById("errorMsg").innerHTML += " Terms";
+        document.getElementById("errorMsg").innerHTML += " Terms,";
       }
       if(pickup == null){
-        document.getElementById("errorMsg").innerHTML += " Pickup";
+        document.getElementById("errorMsg").innerHTML += " Pickup,";
       }
       if(quantity <= 0){
         document.getElementById("errorMsg").innerHTML += " Quantity cannot be 0";
