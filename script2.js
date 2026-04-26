@@ -25,10 +25,10 @@ document.getElementById("Product").innerHTML = localStorage.getItem("product");
 document.getElementById("Quantity").innerHTML = localStorage.getItem("quantity");
 document.getElementById("Pickup").innerHTML = localStorage.getItem("pickup"); 
 
-if(product.includes("variant1")){
+if(product.includes("variant 1")){
   document.getElementById("price").innerHTML = Number(quantity) * 93.138;
 }
-else if(product.includes("variant2")){
+else if(product.includes("variant 2")){
   document.getElementById("price").innerHTML = Number(quantity) * 143.138;
 }
 if(localStorage.getItem("pickup") != "Delivery"){
